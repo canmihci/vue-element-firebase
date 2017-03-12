@@ -30,12 +30,26 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.text-center {
+  text-align: center;
+}
+
+
 .flex-item {
   flex: 1;
 }
 
 .float-right{
   float: right;
+}
+
+.float-left{
+  float: left;
+}
+
+.centered{
+  justify-content: center;
 }
 
 .el-menu--horizontal {
@@ -48,6 +62,11 @@ body {
 
 .el-menu--horizontal > .el-submenu {
   float: right !important;
+}
+
+.panel {
+  background-color: white;
+  padding: 30px 30px 0px 30px;
 }
 
 </style>

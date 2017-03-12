@@ -11,12 +11,12 @@ const user = {
     changeGender (context, gender) {
       context.commit('changeGender', gender)
     }
-  },
-  getters: {
-    shortenedGender (state) {
-      return state.welcomeText.slice(0, 1)
-    }
-  }
+  }// ,
+  // getters: {
+  //   shortenedGender (state) {
+  //     return state.welcomeText.slice(0, 1)
+  //   }
+  // }
 }
 
 export default user
