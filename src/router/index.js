@@ -5,9 +5,7 @@ import SignIn from '@/components/SignIn'
 import SignUp from '@/components/SignUp'
 import Dashboard from '@/components/Dashboard'
 import * as firebase from 'firebase'
-import FirebaseConfig from '@/api/config'
-
-const fire = firebase.initializeApp(FirebaseConfig)
+import firebaseApp from '../firebase'
 
 Vue.use(Router)
 
@@ -18,7 +16,7 @@ const router = new Router({
       name: 'sign-in',
       component: SignIn,
       beforeEnter: (to, from, next) => {
-        if (fire.auth().currentUser) {
+        if (firebaseApp.auth().currentUser) {
           next('dashboard')
         } else {
           next()
@@ -30,7 +28,7 @@ const router = new Router({
       name: 'sign-up',
       component: SignUp,
       beforeEnter: (to, from, next) => {
-        if (fire.auth().currentUser) {
+        if (firebaseApp.auth().currentUser) {
           next('dashboard')
         } else {
           next()

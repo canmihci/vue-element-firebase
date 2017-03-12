@@ -9,6 +9,7 @@
     </el-col>
     <el-col class="full-height" :span="21">
       <HorizontalNav></HorizontalNav>
+      <el-button @click='testFunc'>Clicky</el-button>
       <ContentContainer></ContentContainer>
     </el-col>
   </el-row>
@@ -19,6 +20,7 @@ import HorizontalNav from './HorizontalNav'
 import VerticalNav from './VerticalNav'
 import ContentContainer from './ContentContainer'
 import DashboardLogo from './DashboardLogo'
+import MainInstance from '../main'
 
 export default {
   name: 'dashboard',
@@ -30,8 +32,12 @@ export default {
   computed: {
   },
   methods: {
+    testFunc () {
+      MainInstance.$firebaseRefs.anArray.push({'yo': 'whadup'})
+    }
   },
   created () {
+    console.log(MainInstance)
   }
 }
 </script>
